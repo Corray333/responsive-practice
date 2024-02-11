@@ -23,14 +23,12 @@ header{
     align-items: center;
     justify-content: center;
     gap: 150px;
-    background: url("./assets/bg1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+}
+header>*{
+    z-index: 10;
 }
 .headers-container{
     max-width: 500px;
-
 }
 .headers-container>h3{
     text-align: center;
@@ -38,6 +36,16 @@ header{
 .headers-container>h1{
     font-size: 4rem;
     text-align: center;
+}
+.background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("./assets/bg1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
 }
 
 @media screen and (max-width:450px) {
@@ -64,6 +72,7 @@ header{
     background-position: center top;
     position: absolute;
     bottom: -100px;
+    z-index: 11;
 }
 
 /* main section */
@@ -74,6 +83,8 @@ main{
     flex-direction: column;
     align-items: center;
     gap: 100px;
+    z-index: 10;
+    position: relative;
 }
 
 
@@ -144,20 +155,23 @@ main button:hover{
     aspect-ratio: 2/3;
     object-fit: cover;
 }
-.content-section>.bg-img{
+main>.bg-img{
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(35, 36, 30, 1) 90%), url("./assets/bg3.png");
     background-size: cover;
     background-position: top;    
     position: absolute;
     width: 100%;
     height: 350px;
-    top: -200px;
+    top: 800px;
 }
 #big-gap{
     margin-top: 200px;
 }
 
 @media screen and (max-width: 760px)  {
+    p{
+        font-size: 0.7rem;
+    }
     .content-section{
         flex-direction: column;
         align-items: center;
@@ -197,6 +211,11 @@ footer{
     color: white;
     padding: 50px 0;
     gap: 25px;
+    position: relative;
+}
+footer>*{
+    position: relative;
+    z-index: 10;
 }
 .footer-top{
     max-width: 700px;
@@ -227,7 +246,6 @@ footer>.content-section .text-info-block {
     align-items: end;
     text-align: end;
     gap: 5px;
-    width: fit-content;
 }
 
 footer .info-block{
@@ -251,10 +269,17 @@ footer .info-block{
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(90, 118, 112, 1) 90%), url("./assets/bg4.png");
     background-size: cover;
     z-index: 0;
+    background-position: top;    
+    position: absolute;
+    width: 100%;
+    height: 350px;
+    margin-top: 150px;
 }
-
 @media screen and (max-width: 760px)  {
     .scores{
         flex-direction: column;
+    }
+    #bottom-bg-image{
+        margin-top: 600px;
     }
 }
